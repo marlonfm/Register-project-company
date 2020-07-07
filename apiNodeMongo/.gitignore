@@ -1,0 +1,10 @@
+node_modules
+
+anotaApi
+
+yarn.lock
+
+yarn-error.log
+
+.vscode
+

@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
+/* font-family: 'Inconsolata', monospace; */
+
+/* background-color: rgb(8, 8, 8); */
+
+/* background-color: rgba(248, 85, 44, 0.781);*/
+
+.cabecalho {
+    background-color: rgb(17, 17, 17);
+    width: 100%;
+    height: 70px;
+    
+}
+
+.contLeft {
+    float: left;
+    height: 70px;
+    width: 50%;
+}
+
+.contLeft h2 {
+    font-family: 'Inconsolata', monospace;
+    margin-top: 3%;
+    margin-left: 5%;
+    font-size: 18px;
+}
+
+.contRight {
+    float: right;
+    width: 50%;
+    height: 70px;
+}
+
+.inpSearch {
+    background-color: rgb(17, 17, 17);
+    border: 1px solid;
+    height: 35px;
+    color: rgb(214, 199, 199);
+    width: 110%;
+    border-left: white;
+    border-right: white;
+    border-top: white;
+    font-size: 14px;
+}
+
+.Search {
+    float: right;
+    margin-right: 33%;
+    margin-top: -4%;
+}
+
+.Search .iconSearch {
+    position: absolute;
+    left: 34%;
+    top: 4%;
+    cursor: pointer;
+}
+
+.iconsAlign{
+    float: right;
+    height: 56px;
+    width: 33%;
+}
+
+.btnUser {
+    border: 0;
+    border-radius: 50px;
+    width: 43px;
+    height: 76%;
+    margin-top: 6%;
+    float: right;
+    margin-right: 10%;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 2px 1px 5px 0px rgb(28, 28, 28);
+}
+
+.btnAlert {
+    border: 0;
+    border-radius: 50px;
+    width: 43px;
+    height: 76%;
+    margin-top: 6%;
+    float: left;
+    margin-left: 43%;
+    background-color: rgb(28, 28, 28);
+    cursor: pointer;
+}
+
+.cadasterTasks {
+    background-color:  rgb(8, 8, 8);
+    width: 50%;
+    height: 520px;
+    border-radius: 20px;
+    margin-top: 3%;
+    margin-left: 3%;
+    box-shadow: 2px 1px 10px 1px rgb(12, 12, 12);
+    float: left;
+}
+
+.cadasterTasksRight {
+    background-color:  rgb(8, 8, 8);
+    width: 40%;
+    height: 520px;
+    border-radius: 20px;
+    margin-top: 3%;
+    margin-right: 3%;
+    box-shadow: 2px 1px 10px 1px rgb(12, 12, 12);
+    float: right;
+}
+
+.ancListar {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 30%;
+    margin-top: 4%;
+    float: left;
+}
+
+.inps {
+    
+    width: 60%;
+    margin: auto;
+    height: 480px;
+    margin-top: 0%;
+}
+
+.inpsright {
+    width: 60%;
+    margin: auto;
+    height: 480px;
+    margin-top: 0%;
+}
+
+
+
+.titleinp {
+    width: 100%;
+    height: 45px;
+    margin: auto;
+    border: 0;
+    border-radius: 8px;
+    background-color: rgb(248, 241, 241);
+    margin-top: 4%;
+    text-align: center;
+    color: rgb(19, 17, 17);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 14px;
+}
+
+.descriptioninp {
+    width: 100%;
+    height: 200px;
+    margin: auto;
+    border: 0;
+    border-radius: 8px;
+    background-color: rgb(248, 241, 241);
+    margin-top: 4%;
+    text-align: center;
+    color: rgb(19, 17, 17);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 14px;
+}
+
+.textTitle {
+   
+} 
+
+.vmsready {
+    margin-left: 10%;
+    padding-top: 10%;
+    font-size: 28px;
+    font-family: 'Inconsolata', monospace;
+}
+
+.vmstasks {
+    margin-left: 12%;
+    padding-top: 10%;
+    font-size: 22px;
+    font-family: 'Inconsolata', monospace;
+}
+
+.btnSign {
+    background: linear-gradient(90deg, rgba(39,37,73,1) 0%, rgba(164,14,2,1) 61%, rgba(171,20,8,1) 93%, rgba(171,20,8,1) 100%, rgba(191,38,26,1) 100%); 
+    color: white;
+    border: 0;
+    border-radius: 30px;
+    width: 100%;
+    height: 45px;
+    margin-top: 7%;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+}
+
+.btnSign:hover {
+    transition: all 1s;
+    color: black;
+}

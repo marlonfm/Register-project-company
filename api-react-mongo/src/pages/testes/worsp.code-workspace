@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../../../../apiNodeMongo"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {}
+}
