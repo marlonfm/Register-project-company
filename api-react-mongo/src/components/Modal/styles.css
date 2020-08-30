@@ -1,0 +1,37 @@
+.modal{
+    background-color: rgb(255, 255, 255);
+    display: none;
+    position: fixed;
+    width: 300px;
+    height: 150px;
+    left: 75%;
+    top: 40px;
+    color: black;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.close--modal {
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.modal--content {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    margin-top: 12%;
+}
+
+.info--user {
+    font-size: 14px;
+    margin-bottom: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+b {
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

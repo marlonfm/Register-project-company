@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import Button from '../../components/Button';
 
 
 export default function ForgetPass(){
@@ -22,10 +23,7 @@ export default function ForgetPass(){
                     className="regForgot"
                     />
 
-                    <button
-                    type="button"
-                    className="btnSign"
-                    >Continue</button>
+                    <Button title="Continue"/>
 
                    
                     </form>

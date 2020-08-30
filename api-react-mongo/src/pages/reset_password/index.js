@@ -1,14 +1,17 @@
 import React from 'react';
 import './style.css';
-import { FcKey } from 'react-icons/fc'
 import { FcPrivacy } from "react-icons/fc";
 import { FcFeedback } from 'react-icons/fc';
+import Button from '../../components/Button/index'
 export default function Reset_pass(){
+
+    let userLog = localStorage.getItem('email');
+
     return(
         <div className="regisPass">
 
             <div className="contentLoginPass">
-                <h1 className="textLoginPass">JÁ ESTAMOS FINALIZANDO A <br/>RECUPERAÇÃO DE SUA SENHA...</h1>
+                <h1 className="textLoginPass">OI {userLog}, JÁ ESTAMOS FINALIZANDO A <br/>RECUPERAÇÃO DE SUA SENHA...</h1>
             </div>
 
             <form className="formRegPass">
@@ -18,12 +21,6 @@ export default function Reset_pass(){
                 placeholder="Email"
                 className="regPass"
                 /><FcFeedback className="iconBoxPass"/>
-
-                <input 
-                type="text"
-                placeholder="Your Token"
-                className="regPass"
-                /><FcKey className="iconUsPassToken"/>
 
                 <div className="bol1"></div>
                 <div className="bol2"></div>
@@ -37,10 +34,7 @@ export default function Reset_pass(){
                 className="regPass"
                 /><FcPrivacy className="iconPassPass"/> 
 
-                <button
-                type="button"
-                className="btnSign"
-                >Alterar senha</button>
+                <Button title="Alterar senha"/>
 
                 
             </form>

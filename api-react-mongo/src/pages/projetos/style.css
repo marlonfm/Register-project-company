@@ -11,6 +11,9 @@
     height: 70px;
     
 }
+.show{
+    display: block !important;
+}
 
 .contLeft {
     float: left;
@@ -83,7 +86,7 @@
     margin-top: 6%;
     float: left;
     margin-left: 43%;
-    background-color: rgb(28, 28, 28);
+    background-color: rgb(17, 17, 17);
     cursor: pointer;
 }
 
@@ -164,9 +167,6 @@
     font-size: 14px;
 }
 
-.textTitle {
-   
-} 
 
 .vmsready {
     margin-left: 10%;

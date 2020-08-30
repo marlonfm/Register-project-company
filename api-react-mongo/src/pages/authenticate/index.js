@@ -7,6 +7,7 @@ import Inter from '../../assets/inter.png';
 import { Link,useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import { login } from '../../services/auth';
+import Button from '../../components/Button';
 
 export default function Autheticate(){
 
@@ -90,10 +91,8 @@ export default function Autheticate(){
                     onChange={e=> setPassword(e.target.value)}
                     /><FcPrivacy className="iconPassAuth"/>
 
-                    <button
-                    type="submit"
-                    className="btnSign"
-                    >Sign In</button>
+                    <Button title='Sign In'/>
+                        
                     </form>
                     <Link to="/forget_password" className="ancForgotPassAuth">
                         Forget your password?

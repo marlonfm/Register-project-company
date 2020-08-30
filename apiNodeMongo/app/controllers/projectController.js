@@ -28,14 +28,14 @@ router.get('/', async (req, res)=>{
 router.get('/:projectId', async (req, res)=>{
     try {
         
-        const project = await Project.findById(req.params.projectId).populate(['user', 'tasks']);
+        const project = await Project.find({ user: req.params.projectId }).populate(['user', 'tasks']);
 
         return res.json([project]);
 
     }catch(err){
         return res.status(400).send({error: 'error load one project!'});
     }
-});
+}); 
 
 router.post('/', async (req,res)=>{
     

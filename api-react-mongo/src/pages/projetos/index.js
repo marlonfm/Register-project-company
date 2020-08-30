@@ -5,6 +5,9 @@ import { FcManager } from 'react-icons/fc';
 import { AiOutlineBell } from 'react-icons/ai';
 import { Link, useHistory } from 'react-router-dom';
 import api from '../../services/api';
+import Button from '../../components/Button';
+import Modal from '../../components/Modal';
+import ButtonLogout from '../../components/ButtonLogout';
 
 export default function Projetos(){
 
@@ -14,13 +17,26 @@ export default function Projetos(){
     const token = localStorage.getItem('token');
 
     const idUSer = localStorage.getItem('projeid');
-    
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [titletasks, setTitletasks] = useState('');
 
-    const [titleassigned, setTitleassigned] = useState(idUSer);
+    const [dropdown, setDropdown] = useState("");
+
+    const showDropdown = () => {
+        console.log("show");
+        setDropdown("show");
+        document.body.addEventListener("click", closeDropdown);
+        //document.querySelector('.projects').style.opacity = '0.5';
+      }
+    
+      const closeDropdown = event => {
+        console.log("hidden");
+        setDropdown("");
+        document.body.removeEventListener("click", closeDropdown);
+        //document.querySelector('.projects').style.opacity = '1';
+      };
 
     async function criaTask(e) {
         
@@ -32,7 +48,7 @@ export default function Projetos(){
             description,
             tasks: [
                 { title: titletasks },
-                { assignedTo: titleassigned},
+                { assignedTo: idUSer},
             ],
         };
 
@@ -46,7 +62,8 @@ export default function Projetos(){
 
             alert('Projeto cadastrado com sucesso! Você será redirecionado para a tela de Acompanhamento dos seus projetos!');
 
-            localStorage.setItem('projid', response.data.tasks[0].project); 
+            localStorage.setItem('projid', response.data[0].tasks[0].project); 
+            
 
             
             his.push('/list');
@@ -54,7 +71,7 @@ export default function Projetos(){
 
         }catch(err) {
             console.log(err);
-            alert("Ops. Erro ao adicionar projeto, verifique o campo: \n Para quem está assignado:")
+            alert("Ops. Erro ao adicionar projeto!")
         }
 
     }
@@ -66,14 +83,6 @@ export default function Projetos(){
                 <div className="contLeft">
                     <h2>START</h2>
 
-                    <div className="Search">
-                        <input type="text"
-                        placeholder="Search"
-                        className="inpSearch"
-                        />
-                        <AiOutlineSearch className="iconSearch"/>
-                    </div>
-
                 </div>
 
                 <div className="contRight">
@@ -84,15 +93,19 @@ export default function Projetos(){
 
                     <div className="iconsAlign">
                         <button type="button" className="btnAlert">
-                            <AiOutlineBell/>
+                        <ButtonLogout/>
                         </button>
 
                         <button type="button" 
-                        className="btnUser"
-                        
-                        >
+                        className="btnUser" onClick={showDropdown}>
                             <FcManager/> 
                         </button>
+
+                        <Modal
+                        className={dropdown}
+                        closeModal={closeDropdown}
+                        representant={emailUs}
+                        />
                     </div>
                 </div>
             </header>
@@ -136,7 +149,7 @@ export default function Projetos(){
                         />
 
                         
-                        <button type="submit" className="btnSign">Cadastrar Projeto</button>
+                        <Button title="Cadastrar Projeto"/>
                     </div>
                     
                 
@@ -145,3 +158,13 @@ export default function Projetos(){
         </div>
     );
 }
+
+/*
+                    <div className="Search">
+                        <input type="text"
+                        placeholder="Search"
+                        className="inpSearch"
+                        />
+                        <AiOutlineSearch className="iconSearch"/>
+                    </div>
+*/

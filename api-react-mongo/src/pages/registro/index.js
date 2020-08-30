@@ -6,6 +6,7 @@ import { FcFeedback } from 'react-icons/fc';
 import { AiOutlineCrown } from 'react-icons/ai';
 import api from '../../services/api';
 import { useHistory, Link } from 'react-router-dom';
+import Button from '../../components/Button';
 
 export default function Register(){
 
@@ -29,7 +30,7 @@ export default function Register(){
 
             const response = await api.post('/auth/register', dataRegister);
 
-            alert(`Cadastro realizado com sucesso! seu Token é: ${response.data.token}`)
+            alert(`Cadastro realizado com sucesso ${response.data.user.name}!`);
 
             History.push('/authenticate');
            
@@ -79,10 +80,7 @@ export default function Register(){
                 onChange={e=>setPassword(e.target.value)}
                 /><FcPrivacy className="iconPass"/> 
 
-                <button
-                type="submit"
-                className="btnSign"
-                >Sign Up</button>
+                <Button title="Sign Up"/>
 
                 <Link to="/authenticate" className="goingLogin">
                     Already a user? click.
