@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+require('dotenv/config');
 
-mongoose.connect('mongodb://localhost/nodetesteapiii',{
+mongoose.connect(process.env.HOST_MONGODB,{
 useNewUrlParser: true, 
 useUnifiedTopology: true,
 useCreateIndex: true,
