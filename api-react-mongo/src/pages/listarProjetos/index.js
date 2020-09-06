@@ -58,7 +58,7 @@ export default function Lista(){
                 
             {titleget.map(mod=>(
                     <Aside 
-                    key={mod._id}
+                    key={mod._id} 
                     titletask={mod.title}
                     descriptiontask={mod.description}
                     taskstask={mod.title}

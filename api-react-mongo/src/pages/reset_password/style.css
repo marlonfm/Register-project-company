@@ -54,9 +54,15 @@ body{
 
 .iconPassPass {
     position: absolute;
-    top: 47%;
+    top: 60%;
     left: 39%;
     
+}
+
+.iconPassKey {
+    position: absolute;
+    top: 48%;
+    left: 39%;
 }
 
 .iconBoxPass {

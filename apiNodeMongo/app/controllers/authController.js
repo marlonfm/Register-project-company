@@ -111,7 +111,7 @@ router.post('/forget_password', async (req, res)=>{
                 return res.status(400).send({error: 'cannot send forgot pass email'});
             }
 
-            return res.send();
+            return res.send({ status: 'OK' });
         })
     }
 
@@ -152,7 +152,9 @@ router.post('/reset_password', async (req, res)=>{
 
             await user.save();
 
-            res.send();
+            res.send({
+                message: 'OK'
+            });
     } catch(err) {
         return res.status(400).send({ error: 'cannot reset pass, try again' });
     }

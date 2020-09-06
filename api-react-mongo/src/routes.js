@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Registro from './pages/registro';
 import ProjetosAdd from './pages/projetos';
@@ -8,6 +8,10 @@ import ForgetPass from './pages/forgetPassword';
 import ResetPass from './pages/reset_password';
 import Testes from './pages/testes/index';
 import { isAuthenticated } from './config/Auth/auth';
+
+import {Context} from '../src/context/Access/index'
+
+
 
 const Privateroute = ({ component: Component, ...rest }) => (
 
@@ -23,8 +27,12 @@ const Privateroute = ({ component: Component, ...rest }) => (
 );
 
 export default function Rotas() {
+
+    const { status } = useContext(Context);
+
     return(
         <div className="rota">
+            
             <BrowserRouter>
                 <Switch>
                     <Route path="/" exact component={Registro} />
@@ -32,11 +40,17 @@ export default function Rotas() {
                     <Privateroute path="/projects" component={ProjetosAdd}/>
                     <Privateroute path="/list" component={Lista}/>
                     <Route path="/authenticate" component={Authenticate}/>
-                    <Privateroute path="/forget_password" component={ForgetPass}/>
-                    <Privateroute path="/reset_password" component={ResetPass}/>
+                    <Route path="/forget_password" component={ForgetPass}/>
+
+                {
+                    status ? <Route path="/reset_password" component={ResetPass}/>
+                    : <Privateroute path="/reset_password" component={ResetPass}/>
+                }
+  
                     <Route path="/testes" component={Testes}/>
                 </Switch>
             </BrowserRouter>
+           
         </div>
     );
 }
